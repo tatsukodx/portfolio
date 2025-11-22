@@ -1,66 +1,71 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #111;
-  color: white;
   font-family: 'Segoe UI', sans-serif;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #111;
+  color: #eee;
+  line-height: 1.6;
 }
 
+/* ヒーローセクション */
 .hero {
-  position: relative;
-  width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(135deg, #222, #333);
+  text-align: center;
 }
-
-.background-boxes {
-  position: absolute;
-  z-index: 0;
-}
-
-.box {
-  position: absolute;
-  width: 400px;
-  height: 60px; /* 文字の高さに合わせて調整 */
-  background-color: rgba(255, 255, 255, 1);
-  opacity: 0;
-  top: calc(50% - 30px); /* 文字の中央より下に配置（+半分の高さ） */
-  left: calc(50% - 200px); /* 文字の左端に合わせる（中央から半分戻す） */
-  transform: translateX(-100vw);
-  animation: boxSlideIn 1s ease-out forwards;
-}
-
-.box1 { animation-delay: 0s; }
-.box2 { animation-delay: 0.1s; }
-.box3 { animation-delay: 0.2s; }
-.box4 { animation-delay: 0.3s; }
-
-@keyframes boxSlideIn {
-  to {
-    transform: translateX(0);
-    opacity: 0.25;
-  }
-}
-
-.slide-in {
+.hero h1 {
   font-size: 4rem;
-  color: #252525;
-  opacity: 0;
-  transform: translateX(-100px);
-  animation: slideFadeIn 1s ease-out forwards;
-  animation-delay: 1s;
-  position: relative;
-  z-index: 1;
+  margin: 0;
 }
-@keyframes slideFadeIn {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.hero .tagline {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* セクション共通 */
+section {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+section h2 {
+  border-bottom: 2px solid #444;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* 年表 */
+.timeline {
+  list-style: none;
+  padding: 0;
+}
+.timeline li {
+  margin: 15px 0;
+}
+.timeline .year {
+  font-weight: bold;
+  color: #00bcd4;
+  margin-right: 10px;
+}
+
+/* リンク */
+#links a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+#links a:hover {
+  text-decoration: underline;
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #888;
 }
