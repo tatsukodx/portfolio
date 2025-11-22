@@ -1,26 +1,66 @@
 body {
-  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-}
-
-header {
-  background-color: #333;
+  background-color: #111;
   color: white;
-  padding: 20px;
-  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-nav a {
-  margin: 0 15px;
-  color: white;
-  text-decoration: none;
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-section {
-  padding: 20px;
-  background-color: white;
-  margin: 20px;
-  border-radius: 8px;
+.background-boxes {
+  position: absolute;
+  z-index: 0;
+}
+
+.box {
+  position: absolute;
+  width: 400px;
+  height: 60px; /* 文字の高さに合わせて調整 */
+  background-color: rgba(255, 255, 255, 1);
+  opacity: 0;
+  top: calc(50% - 30px); /* 文字の中央より下に配置（+半分の高さ） */
+  left: calc(50% - 200px); /* 文字の左端に合わせる（中央から半分戻す） */
+  transform: translateX(-100vw);
+  animation: boxSlideIn 1s ease-out forwards;
+}
+
+.box1 { animation-delay: 0s; }
+.box2 { animation-delay: 0.1s; }
+.box3 { animation-delay: 0.2s; }
+.box4 { animation-delay: 0.3s; }
+
+@keyframes boxSlideIn {
+  to {
+    transform: translateX(0);
+    opacity: 0.25;
+  }
+}
+
+.slide-in {
+  font-size: 4rem;
+  color: #252525;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideFadeIn 1s ease-out forwards;
+  animation-delay: 1s;
+  position: relative;
+  z-index: 1;
+}
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
